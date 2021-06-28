@@ -10,7 +10,7 @@ from pyspark import SparkContext
 
 sc = SparkContext('local[*]','WordCount')
 Data = sc.textFile('哈利波特.txt')
-RDD = Data.flatMap(lambda x:x.split(' ')).map(lambda x:(x,1)).reduceByKey(lambda x,y:x+y)\
+RDD = Data.flatMap(lambda x:x.split(' ')).map(lambda x:(x,1) if len(x) >= 1 else None).reduceByKey(lambda x,y:x+y)\
     .sortBy(lambda x:x[1],ascending=False).take(10)
 print(RDD)
 
