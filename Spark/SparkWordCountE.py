@@ -1,7 +1,7 @@
 #-# -*- coding = utf-8 -*-
 # @time:2021/6/28 15:48
 # Author:Rain
-# @File:SparkWordCount.py
+# @File:SparkWordCountE.py
 # @Software:PyCharm
 
 import findspark
